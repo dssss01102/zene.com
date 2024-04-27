@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GD Rádió - Toplista</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      .audio-container {
+        margin-bottom: 20px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      .audio-info {
+        font-size: 18px;
+        margin-bottom: 5px;
+        color: #212529;
+      }
+
+      .audio-player {
+        width: 100%;
+        border: none;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">GD Rádió</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Főoldal</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="toplist.html">Toplista</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fav.html">GD kedvencei</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="jumbotron text-center">
+      <h1 class="display-4">GD Rádió - Toplista</h1>
+    </div>
+
+    <div class="container">
+      <div class="audio-container">
+        <div class="audio-info">
+          1. helyezett: Musical Freedom - Öwnboss, Sevek - Move Your Body
+        </div>
+        <audio class="audio-player" controls>
+          <source src="/topzene/Move Your Body.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <div class="audio-container">
+        <div class="audio-info">
+          2. helyezett: Kompa - She Said She's From The Islands
+        </div>
+        <audio class="audio-player" controls>
+          <source
+            src="topzene/She Said She's From The Islands.mp3"
+            type="audio/mpeg"
+          />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <div class="audio-container">
+        <div class="audio-info">3. helyezett: Wawa - Sombrita</div>
+        <audio class="audio-player" controls>
+          <source
+            src="topzene/Wawa Feat. Lauer & Canard - Sombrita.mp3"
+            type="audio/mpeg"
+          />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+      <div class="audio-container">
+        <div class="audio-info">4. helyezett: Ninasky - Bailando</div>
+        <audio class="audio-player" controls>
+          <source
+            src="topzene/Ninasky - Bailando (R.Dawe & Mike G Bootleg) 2022.mp3"
+            type="audio/mpeg"
+          />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+      <div class="audio-container">
+        <div class="audio-info">5. helyezett: D-Block Europe - Prada</div>
+        <audio class="audio-player" controls>
+          <source
+            src="topzene/cassö x RAYE x D-Block Europe  Prada  Car Music.mp3"
+            type="audio/mpeg"
+          />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+      <div class="audio-container">
+        <div class="audio-info">6. helyezett: 6ix9ine - MALA</div>
+        <audio class="audio-player" controls>
+          <source src="topzene/MALA.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <footer class="footer mt-5 py-3 bg-dark text-white text-center">
+      <div class="container">
+        <span>&copy; 2024 GD Rádió</span>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
