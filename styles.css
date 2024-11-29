@@ -1,103 +1,227 @@
-#verificationBox {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    text-align: center;
-    animation: fadeIn 0.5s forwards;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
+/* Google Fonts Link */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-#verificationBox h1 {
-    margin-top: 0;
+a {
+  color: inherit; /* Az öröklött színt veszi fel */
+  text-decoration: none; /* Az aláhúzást eltávolítja */
 }
 
-#verificationBox form {
-    margin-top: 20px;
+* {
+  box-sizing: border-box;
 }
 
-#verificationBox input[type="file"] {
-    display: none;
+/* Scrollbar elrejtése */
+.scrollable {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 0;
+  scrollbar-width: none;
 }
 
-#verificationBox label {
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+.scrollable::-webkit-scrollbar {
+  display: none;
 }
 
-#verificationBox label:hover {
-    background-color: #2980b9;
+/* Header stílus */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-#verificationBox button {
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.menu-toggle {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  user-select: none; /* Ne lehessen kijelölni */
+}
+
+/* Navigáció */
+nav {
+  position: relative;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition: max-height 0.5s ease-out;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #2980b9;
+}
+
+/* Hero szekció */
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url("https://source.unsplash.com/random/1920x1080?music")
+    no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  margin-top: 60px;
+  padding: 20px;
+}
+
+#hero h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+#hero p {
+  font-size: 20px;
+}
+
+.btn {
+  background: #2980b9;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #3498db;
+}
+
+/* Szolgáltatás szekció */
+#services {
+  padding: 60px 20px;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.service {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Rólunk és Kapcsolat szekció */
+section {
+  padding: 60px 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c3e50;
+  color: white;
+  width: 100%;
+  margin-top: 0;
+}
+
+/* Mobil nézet */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    max-height: 0; /* Kezdetben elrejtett */
+    overflow: hidden; /* Elrejti a tartalmat */
+    transition: max-height 0.5s ease-out;
+    display: flex; /* Készítsük el a flexet itt */
+    padding: 0; /* Kezdő padding 0, mivel el lenne rejtve */
+  }
+
+  nav ul.show {
+    max-height: 300px; /* Maximális magasság */
+    padding: 10px 0; /* Belső padding a megjelenítéshez */
+  }
+
+  .menu-toggle {
     display: block;
-    background-color: #2ecc71;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-}
+    order: 2;
+  }
 
-#verificationBox button:hover {
-    background-color: #27ae60;
-}
+  .logo {
+    font-size: 20px;
+  }
+  header {
+    padding: 10px;
+  }
 
-#imagePreview {
-    margin-top: 10px;
-}
+  #hero h1 {
+    font-size: 36px;
+  }
 
-#imagePreview img {
-    max-width: 100%;
-    border-radius: 5px;
-}
+  #hero p {
+    font-size: 18px;
+  }
 
-.closePopup {
+  nav {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 24px;
-    color: #000000;
-    background-color: white;
-    width: 25px;
-    border-radius: 5px;
+    top: 50px;
+    left: 0;
+    right: 0;
+    background: rgba(44, 62, 80, 0.9);
+    z-index: 99;
+  }
+
+  nav ul {
+    padding: 0; /* Kezdő padding 0, mivel el lenne rejtve */
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center; /* Középre igazítás */
+  }
+}
+::selection {
+  background-color: #2c3e50; /* Kijelölés háttérszíne */
+  color: white; /* Kijelölt szöveg színe */
 }
 
-.popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    color: #fff;
-    text-align: center;
-    z-index: 1000;
-}
-
-.error-popup {
-    background-color: #e74c3c;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+::-moz-selection {
+  background-color: #2c3e50; /* Firefox esetén */
+  color: white; /* Kijelölt szöveg színe */
 }

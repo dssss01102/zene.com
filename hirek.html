@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tamási Koncert-fúvószenekar</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html">Tamási Koncert-fúvószenekar</a>
+      </div>
+      <div class="menu-toggle">☰</div>
+      <nav>
+        <ul>
+          <li><a href="#news">Hírek</a></li>
+          <li><a href="#about">Zenekar</a></li>
+          <li><a href="#events">Fellépések</a></li>
+          <li><a href="#contact">Elérhetőség</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="scrollable">
+      <main>
+        <!-- Frissítve: Keret létrehozása -->
+        <section id="news">
+          <h2>Hírek</h2>
+          <p>Tudj meg többet a legfrissebb eseményekről és update-inkről!</p>
+        </section>
+
+        <section id="about">
+          <h2>A Zenekarról</h2>
+          <p>
+            A Csokonai-díjas Tamási Koncert-Fúvószenekar különböző programokat
+            kínál, amelyek megmutatják a helyi közösség zene iránti
+            elkötelezettségét.
+          </p>
+
+          <h3>Próbarend</h3>
+          <div class="schedule">
+            <h4>Október</h4>
+            <ul>
+              <li>11. péntek (17:30-) összpróba</li>
+              <li>15. kedd (17:30-) fafúvós</li>
+              <li>18. péntek (17:30-) összpróba</li>
+              <li>22. kedd (17:30-) rézfúvós</li>
+              <li>23. szerda (16:30-) KOSZORÚZÁS</li>
+              <li>25. péntek (17:30-) összpróba</li>
+              <li>31. csütörtök (17:30-) összpróba</li>
+            </ul>
+            <h4>November</h4>
+            <ul>
+              <li>01. péntek (9:00-) összpróba</li>
+              <li>05. kedd (17:30-) fafúvós</li>
+              <li>08. péntek (17:30-) összpróba</li>
+              <li>12. kedd (17:30-) rézfúvós</li>
+              <li>15. péntek (17:30-) összpróba</li>
+              <li>19. kedd (17:30-) összpróba (művház)</li>
+              <li>22. péntek (17:30-) FŐPRÓBA (művház)</li>
+              <li>23. szombat (18:00-) KONCERT</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="events">
+          <h2>Fellépések, Programok</h2>
+          <ul>
+            <li>
+              December 7., szombat - 16 órától:
+              <strong>Mikulás teadélután</strong> (Zeneiskola)
+            </li>
+            <li>
+              December 8., vasárnap - 17 órától:
+              <strong>Adventi térzene</strong> (Tamási, Túrmezei Erzsébet tér)
+            </li>
+            <li>
+              December 28., szombat - 18 órától: <strong>Évzáró vacsora</strong>
+            </li>
+          </ul>
+        </section>
+
+        <section id="contact">
+          <h2>Kapcsolat</h2>
+          <h3>Tamási Fúvós Egylet</h3>
+          <p><strong>Cím:</strong> 7090 Tamási, Rákóczi u. 51.</p>
+          <p><strong>Telefon:</strong> 70/779-4027</p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:bakonyilidia@yahoo.com">bakonyilidia@yahoo.com</a>
+          </p>
+          <p>
+            <strong>Web:</strong>
+            <a href="http://www.tamasifuvosok.hu" target="_blank"
+              >www.tamasifuvosok.hu</a
+            >
+          </p>
+
+          <h3>A Tamási Fúvós Egylet Vezetősége:</h3>
+          <ul>
+            <li><strong>Szaváriné dr. Bakonyi Lídia</strong> - Elnök</li>
+            <li><strong>Farkas Zsolt</strong> - Alelnök</li>
+            <li><strong>Varga Balázs</strong> - Alelnök</li>
+          </ul>
+          <h4>Elnökségi tagok:</h4>
+          <ul>
+            <li>Juhász Dániel</li>
+            <li>Kuti Máté</li>
+            <li>Sántháné Vass Márta</li>
+            <li>Vanya Tamás</li>
+          </ul>
+        </section>
+      </main>
+      <!-- Frissítve: Keret zárása -->
+
+      <footer>
+        <p>© 2023 Tamási Koncert-Fúvószenekar. Minden jog fenntartva.</p>
+      </footer>
+    </div>
+
+    <script>
+      // Mobil menü kezelése
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navList = document.querySelector("nav ul");
+
+      menuToggle.addEventListener("click", () => {
+        navList.classList.toggle("show");
+      });
+
+      // Smooth Scroll Effect
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          navList.classList.remove("show");
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
